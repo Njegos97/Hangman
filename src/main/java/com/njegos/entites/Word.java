@@ -13,7 +13,7 @@ public class Word {
 	private String wordName;
 	private String starName = "";
 	private String guessWord;
-	private int mistakes = 0;
+	private int Points = 60;
 	ArrayList<String> usedLetters = new ArrayList<>();
 	
 	

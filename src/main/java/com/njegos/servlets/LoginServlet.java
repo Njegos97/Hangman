@@ -30,11 +30,11 @@ public class LoginServlet extends HttpServlet {
 		player.setName(name);
 		player.setPassword(password);
 		
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("player", player);
 		
 		if(pDao.getPlayer(player) != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("player", player);
+			
 			response.sendRedirect("html/Profile.jsp");
 		}
 		else {

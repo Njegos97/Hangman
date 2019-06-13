@@ -39,6 +39,7 @@ public class PlayerDao {
 			
 			ResultSet rs = ps.executeQuery();
 			if(rs.next() == true) {
+				player.setId(rs.getInt("id"));
 				player.setName(rs.getString("name"));
 				player.setPassword(rs.getString("password"));
 				player.setGender(rs.getString("gender"));
@@ -55,6 +56,20 @@ public class PlayerDao {
 		}
 		
 		return null;
+	}
+	
+	public void enterHighScore(int highScore, int id) {
+		Connection connection = ConnectionManager.getInstance().getConnection();
+		String sql = "UPDATE hangman.players  SET highscore = ? WHERE id = ?";
+		
+		try(PreparedStatement ps = connection.prepareStatement(sql)) {
+			ps.setInt(1, highScore);
+			ps.setInt(2, id);
+			
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

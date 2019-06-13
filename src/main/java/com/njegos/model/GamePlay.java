@@ -7,7 +7,7 @@ import com.njegos.entites.Word;
 public class GamePlay {
 
 	public static Word guess(Word word, String letter) {
-		int countMistakes = word.getMistakes();
+		int countMistakes = word.getPoints();
 		String guessWord = word.getStarName();
 		char[] wordCharacters = guessWord.toCharArray();
 		
@@ -26,9 +26,9 @@ public class GamePlay {
 		}
 		
 		if (!word.getWordName().contains(letter)) {
-			countMistakes++;
+			countMistakes -= 10;
 
-			word.setMistakes(countMistakes);
+			word.setPoints(countMistakes);
 		}
 		
 		word.getUsedLetters().add(letter);
