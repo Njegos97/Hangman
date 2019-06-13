@@ -25,7 +25,11 @@
 
 </form>
 
+
 </div>
+<c:forEach items="word">
+<c:out value="${word.getUsedLetters()}"></c:out>
+</c:forEach>
 <c:out value="${word.getStarName() }"></c:out>
 <c:choose>
 <c:when test="${word.getWordName().equals(word.getStarName())}"> Win</c:when>

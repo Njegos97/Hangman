@@ -30,6 +30,8 @@ public class GamePlay {
 
 			word.setMistakes(countMistakes);
 		}
+		
+		word.getUsedLetters().add(letter);
  
 		guessWord = String.valueOf(wordCharacters);
 		word.setStarName(guessWord);

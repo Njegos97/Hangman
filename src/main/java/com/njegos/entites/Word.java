@@ -14,6 +14,7 @@ public class Word {
 	private String starName = "";
 	private String guessWord;
 	private int mistakes = 0;
+	ArrayList<String> usedLetters = new ArrayList<>();
 	
 	
 
