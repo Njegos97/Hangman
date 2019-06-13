@@ -1,0 +1,76 @@
+
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>SignUpServlet</servlet-name>
+		<servlet-class>com.njegos.servlets.SignUpServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.njegos.servlets.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.njegos.servlets.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>WordServlet</display-name>
+		<servlet-name>WordServlet</servlet-name>
+		<servlet-class>com.njegos.servlets.WordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>GuessServlet</display-name>
+		<servlet-name>GuessServlet</servlet-name>
+		<servlet-class>com.njegos.servlets.GuessServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SignUpGetPage</display-name>
+		<servlet-name>SignUpGetPage</servlet-name>
+		<servlet-class>com.njegos.servlets.SignUpGetPage</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>SignUpServlet</servlet-name>
+		<url-pattern>/SignUpServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WordServlet</servlet-name>
+		<url-pattern>/WordServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GuessServlet</servlet-name>
+		<url-pattern>/GuessServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SignUpGetPage</servlet-name>
+		<url-pattern>/SignUpGetPage</url-pattern>
+	</servlet-mapping>
+
+
+
+
+</web-app>
