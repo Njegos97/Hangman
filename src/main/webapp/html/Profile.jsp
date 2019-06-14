@@ -15,35 +15,26 @@
 
 	<c:out value="${sessionScope.player.getName()}"/>
 
-	<div>GifHangmana</div>
-
-	<div class="TableCss">
-		<table border="2">
-
-			<tr>
-				<th>ID</th>
-				<th>HighScore</th>
-			</tr>
-
-
-		</table>
-	</div>
 
 	<div class="PlayerInfo">
 		<table border="2">
 
 
 			<tr>
+		 	    <th>ID</th>
 				<th>Name</th>
 				<th>Gender</th>
 				<th>DateOfBirth</th>
+				<th>HighScore</th>
 			</tr>
 
 			
 				<tr>
+				    <td>${player.getId()}</td>
 					<td>${player.getName()}</td>
 					<td>${player.getGender() }</td>
 					<td>${player.getDob() }</td>
+					<td>${player.getHighScore()}</td>
 
 				</tr>
 

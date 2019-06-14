@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("player", player);
 		
-		if(pDao.getPlayer(player) != null) {
+		if(pDao.getPlayer(player) != null && session != null) {
 			
 			response.sendRedirect("html/Profile.jsp");
 		}
