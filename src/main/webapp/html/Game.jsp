@@ -23,7 +23,7 @@ hello
 <div class="inputLetter">
 
 <form action="../GuessServlet">
-<input type="text" name="letter" placeholder="enter letter" maxlength="1">
+<input type="text" name="letter" placeholder="enter letter" maxlength="1" autofocus="autofocus">
 <input type="submit" >
 
 </form>
@@ -35,7 +35,7 @@ hello
 </c:forEach>
 <c:out value="${word.getStarName() }"></c:out>
 <c:choose>
-<c:when test="${word.getWordName().equals(word.getStarName())}"> Win</c:when>
+<c:when test="${word.getWordName().equals(word.getStarName())}"> That's the word, you won "${word.getPoints()}" points</c:when>
 <c:when test="${word.getPoints() == 60}" > <img alt="" src="../Images/Hangman0.png"></c:when>
 <c:when test="${word.getPoints() == 50}" > <img alt="" src="../Images/Hangman1.png"></c:when>
 <c:when test="${word.getPoints() == 40}" > <img alt="" src="../Images/Hangman2.png"></c:when>

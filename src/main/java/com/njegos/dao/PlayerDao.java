@@ -73,7 +73,26 @@ public class PlayerDao {
 	}
 	
 	
-//	public Player getPlayerInfo(Player player) {
-//		
-//	}
+	public Boolean signUpCheck(String name) {
+		Connection connection = ConnectionManager.getInstance().getConnection();
+		String sql = "SELECT name FROM hangman.players";
+		ResultSet rs = null;
+		
+		try(PreparedStatement ps = connection.prepareStatement(sql)) {
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				if(rs.getString("name").equals(name)) {
+					return false;
+				}
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		return true;
+	}
 }

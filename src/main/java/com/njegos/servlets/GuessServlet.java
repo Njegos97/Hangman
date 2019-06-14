@@ -26,8 +26,7 @@ public class GuessServlet extends HttpServlet {
 		
 	    HttpSession session = request.getSession();
 	    Word word = (Word) session.getAttribute("word");
-	    HttpSession session2 = request.getSession();
-	    Player player = (Player) session2.getAttribute("player");
+	    Player player = (Player) session.getAttribute("player");
 		
 		GamePlay.guess(word, letter);
 		
