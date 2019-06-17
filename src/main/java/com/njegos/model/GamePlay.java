@@ -1,7 +1,6 @@
 package com.njegos.model;
 
-import java.util.ArrayList;
-
+import com.njegos.entites.Player;
 import com.njegos.entites.Word;
 
 public class GamePlay {
@@ -37,6 +36,16 @@ public class GamePlay {
 		word.setStarName(guessWord);
 
 		return word;
+	}
+	
+	public static boolean updateHighScore(Player player, int possibleHighScore) {
+		
+		if(possibleHighScore > player.getHighScore()) {
+			player.setHighScore(possibleHighScore);
+			return true;
+		}
+		
+		return false;
 	}
 	
 	

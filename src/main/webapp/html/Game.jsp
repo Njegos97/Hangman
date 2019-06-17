@@ -13,12 +13,13 @@
 <header>
 
 <h1>Hangman</h1>
-
+<a href="Profile.jsp">Quit game</a>
 </header>
 <h1>
 hello
 <c:out value="${sessionScope.player.getName() }"></c:out>
 </h1>
+
 
 <div class="inputLetter">
 
@@ -27,6 +28,8 @@ hello
 <input type="submit" >
 
 </form>
+
+
 
 
 </div>

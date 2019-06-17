@@ -18,6 +18,11 @@ public class Word {
 	
 	
 
+//	public static Word withPattern() {
+//		Word word = new Word();
+//		
+//		return word;
+//	}
 	
 	
 	

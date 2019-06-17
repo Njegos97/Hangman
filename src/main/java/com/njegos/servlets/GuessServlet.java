@@ -36,7 +36,8 @@ public class GuessServlet extends HttpServlet {
 		
 		else if (word.getStarName().equals(word.getWordName())) {
 			PlayerDao updateHighScore = new PlayerDao();
-			updateHighScore.enterHighScore(word.getPoints(), player.getId());
+			updateHighScore.enterHighScore(word.getPoints(), player.getId(), player);
+		    
 			
 			response.sendRedirect("html/Game.jsp");
 		}

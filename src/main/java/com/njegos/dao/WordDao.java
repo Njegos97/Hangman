@@ -10,12 +10,13 @@ public class WordDao {
 
 	public Word getWord() {
 		Connection connection = ConnectionManager.getInstance().getConnection();
-		String sql = "SELECT * FROM hangman.words WHERE (id = ?)";
+		String sql = "SELECT * FROM hangman.words ORDER BY RAND() LIMIT 1";
 		
-		int randomNumber = (int) (1 + Math.random() * 5);
 		
+		
+		// select * from words odrer by rand() limit 1
 		try(PreparedStatement ps = connection.prepareStatement(sql)) {
-			ps.setInt(1, randomNumber);
+			
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {

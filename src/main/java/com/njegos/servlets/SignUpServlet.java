@@ -32,7 +32,7 @@ public class SignUpServlet extends HttpServlet {
 		PlayerDao signUp = new PlayerDao();
 
 		if (signUp.signUpCheck(name) == false) {
-			request.getRequestDispatcher("html/SignUpFaild.jsp").include(request, response);
+			request.getRequestDispatcher("html/SignUp.jsp").include(request, response);
 		}
 
 		else {

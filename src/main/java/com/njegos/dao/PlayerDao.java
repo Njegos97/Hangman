@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Formatter;
 
 import com.njegos.entites.Player;
+import com.njegos.model.GamePlay;
 
 public class PlayerDao {
 
@@ -67,15 +68,19 @@ public class PlayerDao {
 		return null;
 	}
 	
-	public void enterHighScore(int highScore, int id) {
+	public void enterHighScore(int highScore, int id, Player player) {
 		Connection connection = ConnectionManager.getInstance().getConnection();
 		String sql = "UPDATE hangman.players  SET highscore = ? WHERE id = ?";
-		
+	
 		try(PreparedStatement ps = connection.prepareStatement(sql)) {
+		
+			if(GamePlay.updateHighScore(player, highScore)) {
 			ps.setInt(1, highScore);
 			ps.setInt(2, id);
-			
 			ps.executeUpdate();
+			}
+			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

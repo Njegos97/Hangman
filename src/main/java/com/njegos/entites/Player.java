@@ -19,8 +19,5 @@ public class Player {
 	ArrayList<Integer> Scores;
 	private int HighScore;
 	
-	
-	public String getUsername() {
-		return name;
-	}
+
 }
