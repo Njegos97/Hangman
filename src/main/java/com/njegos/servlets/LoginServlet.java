@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.njegos.dao.PlayerDao;
 import com.njegos.entites.Player;
+import com.njegos.model.GamePlay;
 
 /**
  * Servlet implementation class LoginServlet
@@ -33,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("player", player);
 		
-		if(pDao.getPlayer(player) != null) {
+		if(pDao.getPlayer(player, pDao) != null && GamePlay.checkLogin(player, name, password)) {
 			
 			response.sendRedirect("html/Profile.jsp");
 		}

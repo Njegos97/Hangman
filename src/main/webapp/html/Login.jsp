@@ -13,6 +13,7 @@
 <link href="../css/LoginCss.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+<a href="../index.jsp">HomePage</a>
 
 	<div class="LoginCss">
 		<fieldset>

@@ -38,13 +38,16 @@ public class PlayerDao {
 		}
 	}
 	
-	public Player getPlayer(Player player) {
+	public Player getPlayer(Player player, PlayerDao playerDao) {
 		Connection connection = ConnectionManager.getInstance().getConnection();
-		String sql = "Select * FROM hangman.players WHERE (name = ? AND password = ?)";
+		String sql = "Select * FROM hangman.players WHERE (id = ?)";
+		
+		
+		int id = playerDao.returnId(player);
 		
 		try(PreparedStatement ps = connection.prepareStatement(sql)) {
-			ps.setString(1, player.getName());
-			ps.setString(2, player.getPassword());
+			ps.setInt(1, id);
+			
 			
 			ResultSet rs = ps.executeQuery();
 			if(rs.next() == true) {
@@ -55,11 +58,7 @@ public class PlayerDao {
 				player.setHighScore(rs.getInt("highscore"));
 				
 				return player;
-			}
-			
-			
-			
-			
+			}	
 			
 		} catch (Exception e) {
 			System.out.println("Wrong username or password");
@@ -125,8 +124,29 @@ public class PlayerDao {
 	    return null;
 	}
 	
+	public int returnId(Player player) {
+		Connection connection = ConnectionManager.getInstance().getConnection();
+		String sql = "Select * FROM hangman.players WHERE (name = ?)";
+		
+		try(PreparedStatement ps = connection.prepareStatement(sql)) {
+			ps.setString(1, player.getName());
+			
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next() == true) {
+				player.setId(rs.getInt("id"));
+				
+				return player.getId();
+			}	
+			
+		} catch (Exception e) {
+			System.out.println("Wrong username or password");
+	}
+		
+		return 0;
+	
 	
 		
-	
+	}
 	
 }

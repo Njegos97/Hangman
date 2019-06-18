@@ -17,7 +17,7 @@ public class LogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.getSession().invalidate();
 		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
-		response.sendRedirect("html/Login.jsp");
+		response.sendRedirect("index.jsp");
 		
 	
 		

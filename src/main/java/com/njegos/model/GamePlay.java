@@ -48,6 +48,13 @@ public class GamePlay {
 		return false;
 	}
 	
+	public static boolean checkLogin(Player player, String username, String password) {
+		if(player.getName().equals(username) && player.getPassword().equals(password)) {
+			return true;
+		}
+		return false;
+	}
+	
 	
 
 }
