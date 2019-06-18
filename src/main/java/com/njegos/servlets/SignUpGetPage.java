@@ -14,7 +14,12 @@ public class SignUpGetPage extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("html/Login.jsp");
+		
+		
+		
+			request.getRequestDispatcher("html/Login.jsp").include(request, response);
+		
+		
 	}
 
 

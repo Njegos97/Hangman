@@ -14,3 +14,13 @@ body {
 	width: 1260px;
 	height: 700px;
 }
+
+a{
+	
+	position: absolute;
+	left:1100px;
+	bottom: 80px;
+	font-size: 20px;
+	
+	
+}

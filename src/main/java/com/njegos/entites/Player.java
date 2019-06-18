@@ -17,9 +17,7 @@ public class Player {
 	private String dob;
 	private String gender;
 	ArrayList<Integer> Scores;
+	private int HighScore;
 	
-	
-	public String getUsername() {
-		return name;
-	}
+
 }

@@ -1,12 +1,14 @@
 
 
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	version="3.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
 	<display-name>Archetype Created Web Application</display-name>
 
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 	<servlet>
 		<servlet-name>SignUpServlet</servlet-name>
 		<servlet-class>com.njegos.servlets.SignUpServlet</servlet-class>
@@ -69,6 +71,8 @@
 		<servlet-name>SignUpGetPage</servlet-name>
 		<url-pattern>/SignUpGetPage</url-pattern>
 	</servlet-mapping>
+
+	
 
 
 
